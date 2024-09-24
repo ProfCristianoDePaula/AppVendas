@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppVendas.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240924111130_clientes")]
-    partial class clientes
+    [Migration("20240924115345_teste")]
+    partial class teste
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -117,6 +117,9 @@ namespace AppVendas.Migrations
 
                     b.Property<double>("Valor")
                         .HasColumnType("float");
+
+                    b.Property<int>("teste")
+                        .HasColumnType("int");
 
                     b.HasKey("ProdutoId");
 

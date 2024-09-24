@@ -10,23 +10,23 @@ using AppVendas.Models;
 
 namespace AppVendas.Controllers
 {
-    public class ItensDaVendaController : Controller
+    public class ItensDasVendasController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ItensDaVendaController(ApplicationDbContext context)
+        public ItensDasVendasController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: ItensDaVenda
+        // GET: ItensDasVendas
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.ItensDaVenda.Include(i => i.Produto).Include(i => i.Venda);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: ItensDaVenda/Details/5
+        // GET: ItensDasVendas/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
@@ -46,7 +46,7 @@ namespace AppVendas.Controllers
             return View(itemDaVenda);
         }
 
-        // GET: ItensDaVenda/Create
+        // GET: ItensDasVendas/Create
         public IActionResult Create()
         {
             ViewData["ProdutoId"] = new SelectList(_context.Produtos, "ProdutoId", "ProdutoId");
@@ -54,7 +54,7 @@ namespace AppVendas.Controllers
             return View();
         }
 
-        // POST: ItensDaVenda/Create
+        // POST: ItensDasVendas/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -73,7 +73,7 @@ namespace AppVendas.Controllers
             return View(itemDaVenda);
         }
 
-        // GET: ItensDaVenda/Edit/5
+        // GET: ItensDasVendas/Edit/5
         public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null)
@@ -91,7 +91,7 @@ namespace AppVendas.Controllers
             return View(itemDaVenda);
         }
 
-        // POST: ItensDaVenda/Edit/5
+        // POST: ItensDasVendas/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -128,7 +128,7 @@ namespace AppVendas.Controllers
             return View(itemDaVenda);
         }
 
-        // GET: ItensDaVenda/Delete/5
+        // GET: ItensDasVendas/Delete/5
         public async Task<IActionResult> Delete(Guid? id)
         {
             if (id == null)
@@ -148,7 +148,7 @@ namespace AppVendas.Controllers
             return View(itemDaVenda);
         }
 
-        // POST: ItensDaVenda/Delete/5
+        // POST: ItensDasVendas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppVendas.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240911182725_CriarBancoDeDados")]
-    partial class CriarBancoDeDados
+    [Migration("20240924112316_Inicial")]
+    partial class Inicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
