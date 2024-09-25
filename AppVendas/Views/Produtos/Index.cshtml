@@ -48,7 +48,14 @@
                         @Html.DisplayFor(modelItem => item.QtadeEstoque)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.CadastroAtivo)
+                        @if (item.CadastroAtivo == true)
+                        {
+                            <span>Sim</span>
+                        }
+                        else
+                        {
+                            <span>Não</span>
+                        }
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Categoria.CategoriaNome)
